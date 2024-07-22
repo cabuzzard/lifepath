@@ -1,0 +1,111 @@
+<head>
+    <title>life path number calculator</title>
+    <link rel="stylesheet" href="style1.css">
+    </head>
+    <body>
+    <div id="page">
+        Enter Your Birthday: <br>
+        Month:<input type="number" id="m" min="1" max="12" value="5">
+        Day:<input type="number" id="d" min="1" max="31" value="31">
+        Year:<input type="number" id="y" min="0000" max="9999" value="1975">
+        <p>Click the button to add the date.</p>
+        <p><button onclick="numspl()">Try it</button></p>   
+        <p>Your life Path Number is:           <div id="output1"></div></p><br>
+        </div>
+    <script>
+
+
+
+        
+    function numspl() {
+        var x = document.getElementById("m").value;
+        var d = document.getElementById("d").value;
+        var y = document.getElementById("y").value;
+        x += d + y;
+
+        //length of string
+        function getlength(a){
+            return a.toString().length;            
+        }
+              
+        //convert text format to number array
+        function getarr(b){
+             xn = [];
+        for (let i3 = 0; i3 < b.length; i3++) {
+        xn.push(Number(b[i3]));} 
+        return xn;     
+        }
+
+
+       //add a string to itself
+        function sumarray(c){
+            var sum = 0;
+        for (let i = 0; i < c.length; i++ ) {
+        sum += c[i];}
+        return sum;        
+        }
+        
+        arr = getarr(x);
+        sum1= sumarray(arr);
+        lsum = getlength(sum1);
+        arr2= getarr(sum1);
+    
+        console.log("arr is " + arr);
+        console.log("typeof(x) is " + typeof(x));
+        console.log("sum of arr is " + sum1);
+        console.log("l of sum is " + lsum);
+        console.log("arr2 is " + arr2);
+        console.log("typeof(sum1) is " + typeof(sum1));
+        console.log("loop begin ---- ");
+        let t=1;
+       
+    while(lsum>0) {
+        console.log("--- loop # "+t+" ---");
+        sum2 = getlength(sum1);
+        sumtext = sum1.toString();
+        arr = getarr(sumtext);
+        sum2=sumarray(arr); 
+        l2 =getlength(sum2);
+        sum1=sum2;
+        console.log("sum is " + sum1);
+        console.log("arr is " + arr);
+        console.log("sum of arr is " + sum2);
+        console.log("length of sum of arr is " + l2);
+        t++;
+    lsum--;    
+    }
+    document.getElementById("output1").innerHTML = sum2;
+}  
+      
+    
+
+        /* working rudi loop 
+           while(getlength(x) > 1) {
+                x = Math.floor(x / 2)
+                console.log("x is " + x);
+        }
+ */ 
+           /* //add the string of numbers from form
+        //var sum1 = 0;
+        //for (let i1 = 0; i1 < xn.length; i1++ ) {
+        //sum1 += xn[i1];}
+        //document.write(sum1);
+
+
+        text += "<br>The input is   " + x 
+        + "  -length of input is   " + linput
+        + "  -array is    " + xn 
+        + "    -sum of array is   " + sum1 
+        + "    -length of sum is   " + lsum 
+        + "    -sum of sum is   " + sum2 
+       // + "  -i is   " + i 
+        ;
+        //i = getLength(sum1);
+        
+    document.getElementById("output1").innerHTML = text;
+    */
+
+
+
+    </script>
+    </body>
