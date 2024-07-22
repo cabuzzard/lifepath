@@ -1,6 +1,6 @@
 <head>
     <title>life path number calculator</title>
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style.css">
     </head>
     <body>
     <div id="page">
@@ -13,10 +13,7 @@
         <p>Your life Path Number is:           <div id="output1"></div></p><br>
         </div>
     <script>
-
-
-
-        
+    
     function numspl() {
         var x = document.getElementById("m").value;
         var d = document.getElementById("d").value;
@@ -58,7 +55,7 @@
         console.log("typeof(sum1) is " + typeof(sum1));
         console.log("loop begin ---- ");
         let t=1;
-       
+    // 'rudi' loop   
     while(lsum>0) {
         console.log("--- loop # "+t+" ---");
         sum2 = getlength(sum1);
@@ -76,36 +73,5 @@
     }
     document.getElementById("output1").innerHTML = sum2;
 }  
-      
-    
-
-        /* working rudi loop 
-           while(getlength(x) > 1) {
-                x = Math.floor(x / 2)
-                console.log("x is " + x);
-        }
- */ 
-           /* //add the string of numbers from form
-        //var sum1 = 0;
-        //for (let i1 = 0; i1 < xn.length; i1++ ) {
-        //sum1 += xn[i1];}
-        //document.write(sum1);
-
-
-        text += "<br>The input is   " + x 
-        + "  -length of input is   " + linput
-        + "  -array is    " + xn 
-        + "    -sum of array is   " + sum1 
-        + "    -length of sum is   " + lsum 
-        + "    -sum of sum is   " + sum2 
-       // + "  -i is   " + i 
-        ;
-        //i = getLength(sum1);
-        
-    document.getElementById("output1").innerHTML = text;
-    */
-
-
-
     </script>
     </body>
